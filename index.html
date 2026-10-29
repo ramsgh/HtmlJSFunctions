@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30 JavaScript Control Flow & String Exercises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f4f7f6;
+            color: #333;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .category-box {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .exercise {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        label {
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            padding: 6px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 6px 12px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 5px;
+            font-style: italic;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>30 JavaScript Control Flow & String Exercises</h1>
+    <p>Test out all 30 solutions interactively below!</p>
+
+    <!-- CATEGORY 1: Basic Manipulation & Conditions -->
+    <div class="category-box">
+        <h2>1. Basic Manipulation & Conditions</h2>
+        
+        <div class="exercise">
+            <label>1. Check Empty String:</label><br>
+            <input type="text" id="val1" placeholder="Type a string...">
+            <button onclick="runEx1()">Test</button>
+            <div class="result" id="res1"></div>
+        </div>
+
+        <div class="exercise">
+            <label>2. Check String Length (> 10):</label><br>
+            <input type="text" id="val2" placeholder="Type a string...">
+            <button onclick="runEx2()">Test</button>
+            <div class="result" id="res2"></div>
+        </div>
+
+        <div class="exercise">
+            <label>3. Equals Case-Insensitive:</label><br>
+            <input type="text" id="val3a" placeholder="String 1">
+            <input type="text" id="val3b" placeholder="String 2">
+            <button onclick="runEx3()">Test</button>
+            <div class="result" id="res3"></div>
+        </div>
+
+        <div class="exercise">
+            <label>4. Starts With "JS":</label><br>
+            <input type="text" id="val4" placeholder="Type a string...">
+            <button onclick="runEx4()">Test</button>
+            <div class="result" id="res4"></div>
+        </div>
+
+        <div class="exercise">
+            <label>5. User Role Greeting (Switch):</label><br>
+            <select id="val5">
+                <option value="admin">Admin</option>
+                <option value="editor">Editor</option>
+                <option value="guest">Guest</option>
+                <option value="other">Other</option>
+            </select>
+            <button onclick="runEx5()">Test</button>
+            <div class="result" id="res5"></div>
+        </div>
+    </div>
+
+    <!-- CATEGORY 2: Loops & Character Inspection -->
+    <div class="category-box">
+        <h2>2. Loops & Character Inspection</h2>
+        
+        <div class="exercise">
+            <label>6. Count Vowels:</label><br>
+            <input type="text" id="val6" placeholder="Type a sentence...">
+            <button onclick="runEx6()">Test</button>
+            <div class="result" id="res6"></div>
+        </div>
+
+        <div class="exercise">
+            <label>7. Reverse a String:</label><br>
+            <input type="text" id="val7" placeholder="Type a string...">
+            <button onclick="runEx7()">Test</button>
+            <div class="result" id="res7"></div>
+        </div>
+
+        <div class="exercise">
+            <label>8. Check Palindrome:</label><br>
+            <input type="text" id="val8" placeholder="e.g., RaceCar">
+            <button onclick="runEx8()">Test</button>
+            <div class="result" id="res8"></div>
+        </div>
+
+        <div class="exercise">
+            <label>9. Count Character Occurrences:</label><br>
+            <input type="text" id="val9a" placeholder="String">
+            <input type="text" id="val9b" placeholder="Char" maxlength="1" style="width: 40px;">
+            <button onclick="runEx9()">Test</button>
+            <div class="result" id="res9"></div>
+        </div>
+
+        <div class="exercise">
+            <label>10. First Uppercase Letter:</label><br>
+            <input type="text" id="val10" placeholder="Type string with Capitals...">
+            <button onclick="runEx10()">Test</button>
+            <div class="result" id="res10"></div>
+        </div>
+    </div>
+
+    <!-- CATEGORY 3: Formatting & Transformations -->
+    <div class="category-box">
+        <h2>3. Formatting & Transformations</h2>
+        
+        <div class="exercise">
+            <label>11. Alternating Case:</label><br>
+            <input type="text" id="val11" placeholder="Type a string...">
+            <button onclick="runEx11()">Test</button>
+            <div class="result" id="res11"></div>
+        </div>
+
+        <div class="exercise">
+            <label>12. Truncate Text (Limit 5):</label><br>
+            <input type="text" id="val12" placeholder="Type long text...">
+            <button onclick="runEx12()">Test</button>
+            <div class="result" id="res12"></div>
+        </div>
+
+        <div class="exercise">
+            <label>13. Title Case a Sentence:</label><br>
+            <input type="text" id="val13" placeholder="hello world">
+            <button onclick="runEx13()">Test</button>
+            <div class="result" id="res13"></div>
+        </div>
+
+        <div class="exercise">
+            <label>14. Mask Credit Card Number:</label><br>
+            <input type="text" id="val14" placeholder="1234567890123456">
+            <button onclick="runEx14()">Test</button>
+            <div class="result" id="res14"></div>
+        </div>
+
+        <div class="exercise">
+            <label>15. Repeat a String Manually (n times):</label><br>
+            <input type="text" id="val15a" placeholder="String">
+            <input type="number" id="val15b" placeholder="n" style="width: 60px;">
+            <button onclick="runEx15()">Test</button>
+            <div class="result" id="res15"></div>
+        </div>
+    </div>
+
+    <!-- CATEGORY 4: Intermediate Logic & Validation -->
+    <div class="category-box">
+        <h2>4. Intermediate Logic & Validation</h2>
+        
+        <div class="exercise">
+            <label>16. Extract Numbers:</label><br>
+            <input type="text" id="val16" placeholder="abc123xyz45">
+            <button onclick="runEx16()">Test</button>
+            <div class="result" id="res16"></div>
+        </div>
+
+        <div class="exercise">
+            <label>17. Validate Password Strength:</label><br>
+            <input type="password" id="val17" placeholder="Password">
+            <button onclick="runEx17()">Test</button>
+            <div class="result" id="res17"></div>
+        </div>
+
+        <div class="exercise">
+            <label>18. Count Words:</label><br>
+            <input type="text" id="val18" placeholder="Sentence here...">
+            <button onclick="runEx18()">Test</button>
+            <div class="result" id="res18"></div>
+        </div>
+
+        <div class="exercise">
+            <label>19. Remove Duplicates:</label><br>
+            <input type="text" id="val19" placeholder="programming">
+            <button onclick="runEx19()">Test</button>
+            <div class="result" id="res19"></div>
+        </div>
+
+        <div class="exercise">
+            <label>20. Find Longest Word:</label><br>
+            <input type="text" id="val20" placeholder="The quick brown fox">
+            <button onclick="runEx20()">Test</button>
+            <div class="result" id="res20"></div>
+        </div>
+    </div>
+
+    <!-- CATEGORY 5: Advanced / Edge-Case Strings -->
+    <div class="category-box">
+        <h2>5. Advanced / Edge-Case Strings</h2>
+        
+        <div class="exercise">
+            <label>21. Check Anagram:</label><br>
+            <input type="text" id="val21a" placeholder="listen">
+            <input type="text" id="val21b" placeholder="silent">
+            <button onclick="runEx21()">Test</button>
+            <div class="result" id="res21"></div>
+        </div>
+
+        <div class="exercise">
+            <label>22. Alternate Words Uppercase (Odd Index):</label><br>
+            <input type="text" id="val22" placeholder="hello wonderful world">
+            <button onclick="runEx22()">Test</button>
+            <div class="result" id="res22"></div>
+        </div>
+
+        <div class="exercise">
+            <label>23. Convert to Kebab-Case:</label><br>
+            <input type="text" id="val23" placeholder="Hello World Wide Web">
+            <button onclick="runEx23()">Test</button>
+            <div class="result" id="res23"></div>
+        </div>
+
+        <div class="exercise">
+            <label>24. Compress String (RLE):</label><br>
+            <input type="text" id="val24" placeholder="aabcccccaaa">
+            <button onclick="runEx24()">Test</button>
+            <div class="result" id="res24"></div>
+        </div>
+
+        <div class="exercise">
+            <label>25. Manual Substring Inclusion (.includes alternative):</label><br>
+            <input type="text" id="val25a" placeholder="Main string">
+            <input type="text" id="val25b" placeholder="Sub string">
+            <button onclick="runEx25()">Test</button>
+            <div class="result" id="res25"></div>
+        </div>
+
+        <div class="exercise">
+            <label>26. Count Consonants:</label><br>
+            <input type="text" id="val26" placeholder="JavaScript">
+            <button onclick="runEx26()">Test</button>
+            <div class="result" id="res26"></div>
+        </div>
+
+        <div class="exercise">
+            <label>27. Caesar Cipher (Shift by 1):</label><br>
+            <input type="text" id="val27" placeholder="abcXYZ">
+            <button onclick="runEx27()">Test</button>
+            <div class="result" id="res27"></div>
+        </div>
+
+        <div class="exercise">
+            <label>28. Extract Domain from Email:</label><br>
+            <input type="text" id="val28" placeholder="user@example.com">
+            <button onclick="runEx28()">Test</button>
+            <div class="result" id="res28"></div>
+        </div>
+
+        <div class="exercise">
+            <label>29. Check Balanced Brackets (...):</label><br>
+            <input type="text" id="val29" placeholder="((()()))">
+            <button onclick="runEx29()">Test</button>
+            <div class="result" id="res29"></div>
+        </div>
+
+        <div class="exercise">
+            <label>30. String FizzBuzz Sequence:</label><br>
+            <input type="number" id="val30" placeholder="Max number (e.g. 15)" style="width: 150px;">
+            <button onclick="runEx30()">Test</button>
+            <div class="result" id="res30"></div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT SCRIPT BLOCK -->
+    <script>
+        // 1. Check Empty String
+        function isEmpty(str) { return str.length === 0; }
+        function runEx1() {
+            let val = document.getElementById('val1').value;
+            document.getElementById('res1').innerText = "Result: " + isEmpty(val);
+        }
+
+        // 2. Check String Length
+        function isLongString(str) {
+            if (str.length > 10) { return "Long"; } 
+            else { return "Short"; }
+        }
+        function runEx2() {
+            let val = document.getElementById('val2').value;
+            document.getElementById('res2').innerText = "Result: " + isLongString(val);
+        }
+
+        // 3. String Equals Case-Insensitive
+        function isEqualIgnoreCase(str1, str2) { return str1.toLowerCase() === str2.toLowerCase(); }
+        function runEx3() {
+            let s1 = document.getElementById('val3a').value;
+            let s2 = document.getElementById('val3b').value;
+            document.getElementById('res3').innerText = "Result: " + isEqualIgnoreCase(s1, s2);
+        }
+
+        // 4. Check Start Substring
+        function startsWithJS(str) {
+            if (str.startsWith("JS")) { return true; } 
+            return false;
+        }
+        function runEx4() {
+            let val = document.getElementById('val4').value;
+            document.getElementById('res4').innerText = "Result: " + startsWithJS(val);
+        }
+
+        // 5. User Role Greeting
+        function greetUser(role) {
+            switch (role.toLowerCase()) {
+                case "admin": return "Welcome, Administrator!";
+                case "editor": return "Welcome, Editor!";
+                case "guest": return "Welcome, Guest!";
+                default: return "Unknown role.";
+            }
+        }
+        function runEx5() {
+            let val = document.getElementById('val5').value;
+            document.getElementById('res5').innerText = "Result: " + greetUser(val);
+        }
+
+        // 6. Count Vowels
+        function countVowels(str) {
+            let count = 0; const vowels = "aeiouAEIOU";
+            for (let char of str) { if (vowels.includes(char)) { count++; } }
+            return count;
+        }
+        function runEx6() {
+            let val = document.getElementById('val6').value;
+            document.getElementById('res6').innerText = "Result: " + countVowels(val);
+        }
+
+        // 7. Reverse a String
+        function reverseString(str) {
+            let reversed = "";
+            for (let i = str.length - 1; i >= 0; i--) { reversed += str[i]; }
+            return reversed;
+        }
+        function runEx7() {
+            let val = document.getElementById('val7').value;
+            document.getElementById('res7').innerText = "Result: " + reverseString(val);
+        }
+
+        // 8. Check Palindrome
+        function isPalindrome(str) {
+            let cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, "");
+            let reversed = cleaned.split("").reverse().join("");
+            return cleaned === reversed;
+        }
+        function runEx8() {
+            let val = document.getElementById('val8').value;
+            document.getElementById('res8').innerText = "Result: " + isPalindrome(val);
+        }
+
+        // 9. Count Character Occurrences
+        function countChar(str, char) {
+            let count = 0;
+            for (let i = 0; i < str.length; i++) { if (str[i] === char) count++; }
+            return count;
+        }
+        function runEx9() {
+            let s = document.getElementById('val9a').value;
+            let c = document.getElementById('val9b').value;
+            document.getElementById('res9').innerText = "Result: " + countChar(s, c);
+        }
+
+        // 10. First Uppercase Letter
+        function findFirstUppercase(str) {
+            for (let char of str) { if (char >= 'A' && char <= 'Z') { return char; } }
+            return "None";
+        }
+        function runEx10() {
+            let val = document.getElementById('val10').value;
+            document.getElementById('res10').innerText = "Result: " + findFirstUppercase(val);
+        }
+
+        // 11. Alternating Case
+        function alternatingCase(str) {
+            let result = "";
+            for (let i = 0; i < str.length; i++) {
+                if (i % 2 === 0) { result += str[i].toLowerCase(); } 
+                else { result += str[i].toUpperCase(); }
+            }
+            return result;
+        }
+        function runEx11() {
+            let val = document.getElementById('val11').value;
+            document.getElementById('res11').innerText = "Result: " + alternatingCase(val);
+        }
+
+        // 12. Truncate Text
+        function truncate(str, limit) {
+            if (str.length > limit) { return str.substring(0, limit) + "..."; }
+            return str;
+        }
+        function runEx12() {
+            let val = document.getElementById('val12').value;
+            document.getElementById('res12').innerText = "Result: " + truncate(val, 5);
+        }
+
+        // 13. Title Case a Sentence
+        function titleCase(str) {
+            let words = str.split(" ");
+            for (let i = 0; i < words.length; i++) {
+                if (words[i].length > 0) {
+                    words[i] = words[i][0].toUpperCase() + words[i].substr(1).toLowerCase();
+                }
+            }
+            return words.join(" ");
+        }
+        function runEx13() {
+            let val = document.getElementById('val13').value;
+            document.getElementById('res13').innerText = "Result: " + titleCase(val);
+        }
+
+        // 14. Mask Credit Card Number
+        function maskCard(cardNumber) {
+            if (cardNumber.length < 4) return cardNumber;
+            let visible = cardNumber.slice(-4);
+            let masked = "";
+            for (let i = 0; i < cardNumber.length - 4; i++) { masked += "*"; }
+            return masked + visible;
+        }
+        function runEx14() {
+            let val = document.getElementById('val14').value;
+            document.getElementById('res14').innerText = "Result: " + maskCard(val);
+        }
+
+        // 15. Repeat a String Manually
+        function repeatStr(str, n) {
+            let result = "";
+            while (n > 0) { result += str; n--; }
+            return result;
+        }
+        function runEx15() {
+            let s = document.getElementById('val15a').value;
+            let n = parseInt(document.getElementById('val15b').value) || 0;
+            document.getElementById('res15').innerText = "Result: " + repeatStr(s, n);
+        }
+
+        // 16. Extract Numbers
+        function extractDigits(str) {
+            let digits = "";
+            for (let char of str) { if (char >= '0' && char <= '9') { digits += char; } }
+            return digits;
+        }
+        function runEx16() {
+            let val = document.getElementById('val16').value;
+            document.getElementById('res16').innerText = "Result: " + extractDigits(val);
+        }
+
+        // 17. Valid Password Length Check
+        function validatePassword(pass) {
+            if (pass.length < 6) return "Weak";
+            if (pass.length <= 10) return "Medium";
+            return "Strong";
+        }
+        function runEx17() {
+            let val = document.getElementById('val17').value;
+            document.getElementById('res17').innerText = "Result: " + validatePassword(val);
+        }
+
+        // 18. Count Words
+        function countWords(str) {
+            let trimmed = str.trim();
+            if (trimmed === "") return 0;
+            return trimmed.split(/\s+/).length;
+        }
+        function runEx18() {
+            let val = document.getElementById('val18').value;
+            document.getElementById('res18').innerText = "Result: " + countWords(val);
+        }
+
+        // 19. Remove Duplicates
+        function removeDuplicates(str) {
+            let unique = "";
+            for (let char of str) { if (!unique.includes(char)) { unique += char; } }
+            return unique;
+        }
+        function runEx19() {
+            let val = document.getElementById('val19').value;
+            document.getElementById('res19').innerText = "Result: " + removeDuplicates(val);
+        }
+
+        // 20. Find Longest Word
+        function findLongestWord(sentence) {
+            let words = sentence.split(" ");
+            let longest = "";
+            for (let word of words) { if (word.length > longest.length) { longest = word; } }
+            return longest;
+        }
+        function runEx20() {
+            let val = document.getElementById('val20').value;
+            document.getElementById('res20').innerText = "Result: " + findLongestWord(val);
+        }
+
+        // 21. Check Anagram
+        function isAnagram(str1, str2) {
+            let s1 = str1.toLowerCase().replace(/[^a-z]/g, "").split("").sort().join("");
+            let s2 = str2.toLowerCase().replace(/[^a-z]/g, "").split("").sort().join("");
+            return s1 === s2;
+        }
+        function runEx21() {
+            let s1 = document.getElementById('val21a').value;
+            let s2 = document.getElementById('val21b').value;
+            document.getElementById('res21').innerText = "Result: " + isAnagram(s1, s2);
+        }
+
+        // 22. Capitalize Every Other Word
+        function alternateWords(sentence) {
+            let words = sentence.split(" ");
+            for (let i = 0; i < words.length; i++) {
+                if (i % 2 !== 0) { words[i] = words[i].toUpperCase(); }
+            }
+            return words.join(" ");
+        }
+        function runEx22() {
+            let val = document.getElementById('val22').value;
+            document.getElementById('res22').innerText = "Result: " + alternateWords(val);
+        }
+
+        // 23. Replace Spaces with Dashes (Kebab-Case)
+        function toKebabCase(str) { return str.trim().toLowerCase().replace(/\s+/g, "-"); }
+        function runEx23() {
+            let val = document.getElementById('val23').value;
+            document.getElementById('res23').innerText = "Result: " + toKebabCase(val);
+        }
+
+        // 24. String Compression
+        function compressString(str) {
+            if (!str) return "";
+            let compressed = ""; let count = 1;
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === str[i + 1]) { count++; } 
+                else { compressed += str[i] + count; count = 1; }
+            }
+            return compressed.length < str.length ? compressed : str;
+        }
+        function runEx24() {
+            let val = document.getElementById('val24').value;
+            document.getElementById('res24').innerText = "Result: " + compressString(val);
+        }
+
+        // 25. Check Substring Inclusion
+        function manualIncludes(mainStr, subStr) {
+            if (subStr === "") return true;
+            for (let i = 0; i <= mainStr.length - subStr.length; i++) {
+                let match = true;
+                for (let j = 0; j < subStr.length; j++) {
+                    if (mainStr[i + j] !== subStr[j]) { match = false; break; }
+                }
+                if (match) return true;
+            }
+            return false;
+        }
+        function runEx25() {
+            let main = document.getElementById('val25a').value;
+            let sub = document.getElementById('val25b').value;
+            document.getElementById('res25').innerText = "Result: " + manualIncludes(main, sub);
+        }
+
+        // 26. Count Consonants
+        function countConsonants(str) {
+            let count = 0; let vowels = "aeiouAEIOU";
+            for (let char of str) { if (char.match(/[a-zA-Z]/) && !vowels.includes(char)) { count++; } }
+            return count;
+        }
+        function runEx26() {
+            let val = document.getElementById('val26').value;
+            document.getElementById('res26').innerText = "Result: " + countConsonants(val);
+        }
+
+        // 27. Caesar Cipher (Shift by 1)
+        function caesarCipher(str) {
+            let result = "";
+            for (let i = 0; i < str.length; i++) {
+                let code = str.charCodeAt(i);
+                if (code >= 65 && code <= 90) { result += String.fromCharCode(((code - 65 + 1) % 26) + 65); } 
+                else if (code >= 97 && code <= 122) { result += String.fromCharCode(((code - 97 + 1) % 26) + 97); } 
+                else { result += str[i]; }
+            }
+            return result;
+        }
+        function runEx27() {
+            let val = document.getElementById('val27').value;
+            document.getElementById('res27').innerText = "Result: " + caesarCipher(val);
+        }
+
+        // 28. Extract Domain from Email
+        function getEmailDomain(email) {
+            let atIndex = email.indexOf("@");
+            if (atIndex === -1) return "Invalid Email";
+            return email.substring(atIndex + 1);
+        }
+        function runEx28() {
+            let val = document.getElementById('val28').value;
+            document.getElementById('res28').innerText = "Result: " + getEmailDomain(val);
+        }
+
+        // 29. Check Valid Bracket Pairing
+        function isBalanced(str) {
+            let count = 0;
+            for (let char of str) {
+                if (char === '(') count++;
+                if (char === ')') count--;
+                if (count < 0) return false;
+            }
+            return count === 0;
+        }
+        function runEx29() {
+            let val = document.getElementById('val29').value;
+            document.getElementById('res29').innerText = "Result: " + isBalanced(val);
+        }
+
+        // 30. FizzBuzz String Version
+        function stringFizzBuzz(maxNumber) {
+            let result = [];
+            for (let i = 1; i <= maxNumber; i++) {
+                if (i % 3 === 0 && i % 5 === 0) { result.push("FizzBuzz"); } 
+                else if (i % 3 === 0) { result.push("Fizz"); } 
+                else if (i % 5 === 0) { result.push("Buzz"); } 
+                else { result.push(i.toString()); }
+            }
+            return result.join(", ");
+        }
+        function runEx30() {
+            let val = parseInt(document.getElementById('val30').value) || 0;
+            document.getElementById('res30').innerText = "Result: " + stringFizzBuzz(val);
+        }
+    </script>
+</body>
+</html>

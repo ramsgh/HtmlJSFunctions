@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Exercise 1</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div class="category-box">
+            <h2>1. Basic Manipulation & Conditions</h2>
+        
+           
+
+            <div class="exercise">
+                <label>1. Check Empty String:</label><br>
+                <input type="text" id="val1" placeholder="Type a String...">
+                <button onclick="runEx1()">Test</button>
+                <div class="result" id="res1"></div>
+            </div>
+
+            <div class="exercise">
+                <label>2. Check String Length (> 10):</label><br>
+                <input type="text" id="val2" placeholder="Type a string...">
+                <button onclick="runEx2()">Test</button>
+                <div class="result" id="res2"></div>
+            </div>
+
+
+
+        </div>
+
+<script>
+        function isEmpty(str) { return str.length === 0; }
+        function runEx1() {
+            let val = document.getElementById('val1').value;
+            document.getElementById('res1').innerText = "Result: " + isEmpty(val);
+        }
+
+        // 2. Check String Length
+        function isLongString(str) {
+            if (str.length > 10) { return "Long"; } 
+            else { return "Short"; }
+        }
+        function runEx2() {
+            let val = document.getElementById('val2').value;
+            document.getElementById('res2').innerText = "Result: " + isLongString(val);
+        }
+
+</script>
+
+    </body>
+</html>
